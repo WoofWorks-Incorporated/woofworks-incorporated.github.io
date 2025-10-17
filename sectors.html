@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WoofWorks Sectors - Our Madness</title>
+    <style>
+        /* Custom Font and Global Styles from index.html */
+        @font-face {
+            font-family: 'True Crimes';
+            src: url('crimes.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'True Crimes', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Header container */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Logo */
+        header img {
+            height: 50px;
+        }
+
+        /* Navigation */
+        nav a {
+            text-decoration: none;
+            color: #000;
+            margin-left: 20px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #a00;
+        }
+
+        /* Main Content Styling */
+        main {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        main h1 {
+            color: #a00;
+            font-size: 3em;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        /* Sector Grid */
+        .sector-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .sector-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .sector-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .sector-card h2 {
+            color: #555;
+            margin-top: 0;
+            font-size: 1.8em;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 10px;
+        }
+        
+        .sector-card a {
+            display: block;
+            text-align: right;
+            color: #a00;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+
+        .sector-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo2.png" alt="WoofWorks Logo">
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="sectors.html">Sectors</a>
+            <a href="about.html">About</a>
+            <a href="#">Sign up</a>
+            <a href="#">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Our Vast, Uncategorized, and Often Parallel Sectors</h1>
+        <p style="text-align: center; font-style: italic;">We do a lot of things. Please don't ask us how we manage the supply chain.</p>
+
+        <div class="sector-grid">
+            
+            <div class="sector-card">
+                <h2>WoofWorks Studios</h2>
+                <p>We craft the world's most epic and critically-panned movies, generate viral game development content, and produce podcasts about competitive knitting. Our latest hit: *The Excavator Who Loved Me*.</p>
+                <a href="studios.html">View Studio Details &rarr;</a>
+            </div>
+
+            <div class="sector-card">
+                <h2>WoofWorks Labs</h2>
+                <p>Pure, unadulterated, and often explosive R&D. We research everything from cold fusion to a better way to slice toast. Note: Do not touch the glowing beaker marked 'Project Alpha'.</p>
+                <a href="#">View Labs Details &rarr;</a>
+            </div>
+
+            <div class="sector-card">
+                <h2>WoofWorks Industrys</h2>
+                <p>The gritty heart of WoofWorks. We manufacture widgets, thingamajigs, and the occasional highly proprietary corporate statue. If you can draw it on a napkin, we can probably mass-produce it.</p>
+                <a href="#">View Industrys Details &rarr;</a>
+            </div>
+
+            <div class="sector-card">
+                <h2>WoofWorks Civil</h2>
+                <p>Earthmoving in the Great Southern Region of WA. We move dirt. We love dirt. We consider dirt our business partner. We are literally the biggest game in town when it comes to shifting vast quantities of soil.</p>
+                <a href="#">View Civil Details &rarr;</a>
+            </div>
+
+            <div class="sector-card">
+                <h2>WoofWorks Construction</h2>
+                <p>We build everything from skyscrapers to moderately sturdy dog houses (ironically). Our commitment is to finish on time, on budget, and usually with the correct roof on the correct building.</p>
+                <a href="#">View Construction Details &rarr;</a>
+            </div>
+
+            <div class="sector-card">
+                <h2>Doggo Martin</h2>
+                <p>Aerospace manufacturing that is absolutely, 100% NOT a Lockheed Martin ripoff. We build rockets, satellites, and extremely fast delivery drones. Our mascot is a very serious-looking, non-dog-related eagle.</p>
+                <a href="#">View Doggo Martin Details &rarr;</a>
+            </div>
+
+            <div class="sector-card">
+                <h2>WoofTech</h2>
+                <p>The tech-centric brain of the operation. We make game consoles (The 'WoofStation 5'), experimental AI, and smart toasters that argue with you about the optimum crunch level. It's the future, baby.</p>
+                <a href="#">View WoofTech Details &rarr;</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 WoofWorks. So many departments, so little time.</p>
+    </footer>
+</body>
+</html>
