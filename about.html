@@ -19,6 +19,7 @@
             padding: 0;
             background-color: #f0f0f0;
             color: #333;
+            font-size: 16px;
         }
 
         /* Header container */
@@ -29,39 +30,102 @@
             padding: 10px 20px;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            flex-wrap: wrap;
         }
 
         /* Logo */
         header img {
             height: 50px;
+            max-width: 200px;
+            object-fit: contain;
         }
 
         /* Navigation */
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
         nav a {
             text-decoration: none;
             color: #000;
-            margin-left: 20px;
+            margin: 10px 20px;
             font-size: 18px;
             transition: color 0.3s;
+            padding: 8px 0;
         }
 
         nav a:hover {
             color: #a00;
         }
 
+        /* Mobile menu button */
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                justify-content: space-between;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px 0;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                margin: 5px 0;
+                padding: 10px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
         /* Main Content Styling */
         main {
-            padding: 40px 20px;
+            padding: 20px;
             max-width: 900px;
             margin: 0 auto;
+            width: 90%;
         }
 
         main h1 {
             color: #a00;
-            font-size: 3em;
+            font-size: 2.5em;
             border-bottom: 2px solid #ccc;
             padding-bottom: 10px;
             margin-bottom: 20px;
+            word-wrap: break-word;
+        }
+
+        main p {
+            line-height: 1.6;
+            margin-bottom: 1.2em;
+        }
+
+        main h2 {
+            color: #555;
+            font-size: 1.8em;
+            margin-top: 30px;
+            word-wrap: break-word;
         }
 
         /* Footer */
@@ -75,14 +139,29 @@
         }
 
         footer p {
-            margin: 5px 0;
+            margin: 10px 0;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 15px;
+            }
+
+            main h1 {
+                font-size: 2em;
+            }
+
+            main h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <img src="logo2.png" alt="WoofWorks Logo">
-
+        <button class="menu-button">☰</button>
         <nav>
             <a href="index.html">Home</a>
             <a href="sectors.html">Sectors</a>
@@ -91,6 +170,12 @@
             <a href="#">Login</a>
         </nav>
     </header>
+
+    <script>
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+    </script>
 
     <main>
         <h1>About WoofWorks: Our Extremely Formal and Bizarre History</h1>
