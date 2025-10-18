@@ -17,8 +17,9 @@
             font-family: 'True Crimes', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0; /* Light background for contrast */
-            color: #333; /* Default text color */
+            background-color: #f0f0f0;
+            color: #333;
+            font-size: 16px;
         }
 
         /* Header container */
@@ -27,53 +28,113 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background-color: #fff; /* White header background */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            flex-wrap: wrap;
         }
 
         /* Logo */
         header img {
-            height: 50px; /* Adjust as needed */
+            height: 50px;
+            max-width: 200px;
+            object-fit: contain;
         }
 
         /* Navigation */
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
         nav a {
             text-decoration: none;
-            color: #000; /* Change text color if needed */
-            margin-left: 20px;
+            color: #000;
+            margin: 10px 20px;
             font-size: 18px;
-            transition: color 0.3s; /* Smooth color transition */
+            transition: color 0.3s;
+            padding: 8px 0;
         }
 
         nav a:hover {
-            color: #a00; /* Simple hover effect to red */
+            color: #a00;
+        }
+
+        /* Mobile menu button */
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                justify-content: space-between;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px 0;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                margin: 5px 0;
+                padding: 10px;
+                width: 100%;
+                text-align: center;
+            }
         }
 
         /* Main Content Styling */
         main {
-            padding: 40px 20px;
+            padding: 20px;
             max-width: 900px;
             margin: 0 auto;
+            width: 90%;
         }
 
         main h1 {
             color: #a00;
-            font-size: 3em;
+            font-size: 2.5em;
             border-bottom: 2px solid #ccc;
             padding-bottom: 10px;
             margin-bottom: 20px;
+            word-wrap: break-word;
+        }
+
+        main p {
+            line-height: 1.6;
+            margin-bottom: 1.2em;
         }
 
         .sector-link {
             display: inline-block;
             background-color: #a00;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 25px;
             text-decoration: none;
             margin-top: 20px;
             border-radius: 5px;
             transition: background-color 0.3s;
             font-size: 1.2em;
+            text-align: center;
+            width: 100%;
+            max-width: 300px;
+            box-sizing: border-box;
         }
 
         .sector-link:hover {
@@ -91,7 +152,23 @@
         }
 
         footer p {
-            margin: 5px 0;
+            margin: 10px 0;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            main h1 {
+                font-size: 2em;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            .sector-link {
+                width: 100%;
+                max-width: none;
+            }
         }
 
     </style>
@@ -99,15 +176,21 @@
 <body>
     <header>
         <img src="logo2.png" alt="WoofWorks Logo">
-
+        <button class="menu-button">☰</button>
         <nav>
             <a href="index.html">Home</a>
             <a href="sectors.html">Sectors</a>
             <a href="about.html">About</a>
-            <a href="#">Sign up</a>
-            <a href="#">Login</a>
+            <a href="signup.html">Sign up</a>
+            <a href="login.html">Login</a>
         </nav>
     </header>
+
+    <script>
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+    </script>
 
     <main>
         <h1>Welcome to WoofWorks - The Future is Now (And It's Confusingly Named)</h1>
