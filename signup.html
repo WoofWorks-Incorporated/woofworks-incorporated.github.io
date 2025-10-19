@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WoofWorks Signup</title>
+    <style>
+        /* Custom Font */
+        @font-face {
+            font-family: 'True Crimes';
+            src: url('crimes.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'True Crimes', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header img {
+            height: 55px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            margin-left: 20px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #a00;
+        }
+
+        /* Signup Container */
+        main {
+            padding: 60px 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        main h1 {
+            color: #a00;
+            font-size: 3em;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1em;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+            font-family: 'True Crimes', sans-serif;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #a00;
+        }
+
+        .submit-btn {
+            background-color: #a00;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            margin-top: 25px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #800;
+        }
+
+        .alt-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+
+        .alt-link a {
+            color: #a00;
+            text-decoration: none;
+        }
+
+        .alt-link a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 60px;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo2.png" alt="WoofWorks Logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="explorehq.html">Explore HQ</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+            
+        </nav>
+    </header>
+
+    <main>
+        <h1>Join WoofWorks</h1>
+        <form>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@woofmail.com" required>
+
+            <label for="password">Create Password</label>
+            <input type="password" id="password" name="password" placeholder="Choose a strong password" required>
+
+            <label for="confirm">Confirm Password</label>
+            <input type="password" id="confirm" name="confirm" placeholder="Re-enter your password" required>
+
+            <button class="submit-btn" type="submit">Join WoofWorks</button>
+
+            <div class="alt-link">
+                Already part of the pack? <a href="login.html">Login here</a>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2025 WoofWorks Co. All rights reserved.</p>
+        <p>Innovation. Power. Unity.</p>
+    </footer>
+
+</body>
+</html>
