@@ -135,10 +135,26 @@
             width: 100%;
             max-width: 300px;
             box-sizing: border-box;
+            margin-bottom: 10px; /* Added spacing for multiple buttons */
         }
 
         .sector-link:hover {
             background-color: #800;
+        }
+        
+        /* New styling for button group to align them */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start; /* Aligns buttons to the left */
+        }
+
+        @media (min-width: 600px) {
+            .button-group {
+                flex-direction: row;
+                justify-content: flex-start;
+            }
         }
 
         /* Footer */
@@ -169,6 +185,10 @@
                 width: 100%;
                 max-width: none;
             }
+            
+            .button-group {
+                flex-direction: column;
+            }
         }
 
     </style>
@@ -183,7 +203,6 @@
             <a href="explorehq.html">Explore HQ</a>
             <a href="login.html">Login</a>
             <a href="signup.html">Sign Up</a>
-            
         </nav>
     </header>
 
@@ -206,8 +225,17 @@
         <p>Our official motto is: **"We Build, We Innovate, We Question Why Our Name Is WoofWorks."** We believe in rigorous innovation, meticulous manufacturing, and occasionally, naming our aerospace division after a dog-related pun.</p>
 
         <h2>You can also explore our HQ!:</h2>
-
         <a href="explorehq.html" class="sector-link">Explore WoofWorks HQ</a>
+
+        <h2>Watch Exclusive WoofWorks Content on WWBC!</h2>
+
+        <p>The **WoofWorks Broadcasting Company (WWBC)** is where our corporate narrative truly unfolds. You can view our highly-curated, mostly-factual content **absolutely free** AD-Free! However, you can support it by buying the WWBC premium plan, you also get access to bloopers and behind-the-scenes content.</p>
+
+        <div class="button-group">
+            <a href="wwbc.html" class="sector-link">Visit WoofWorks Broadcasting Company (Free Tier)</a>
+            <a href="wwbc.html#pro" class="sector-link" style="background-color: #007bff;">Get the WWBC Pro Plan (Premium Viewing)</a>
+        </div>
+        
     </main>
 
     <footer>
