@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <header>
+        <img src="logo2.png" alt="WoofWorks Logo">
+        <button class="menu-button">☰</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="explorehq.html">Explore HQ</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </nav>
+    </header>
+
+    <script>
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+    </script>
+    <main>
+        <p id="myText">
+            This is the thigny page, where im going to write down soo much stuff its gonna hurt your eyes :O
+            O_O
+            look at all this text! well.. you can look at it, but i cant see it while im writing it! soo sad, but cool to think that i cant see it, but future me could, and whoever in there right mind who would want to read this could!
+            woweeeeeee but more important things, the question on LITTIRALLY EVERYONES mind is...
+            does paper taste better than plastic?
+            *cheaks notes* 
+            WAIT NO thats not it...
+            the real question is...
+            is paper as good at holding mass amounts of data as a digital format?
+            hmmmm... well i would say it could, but i doupt it would be the most efficient way as paper reqires ink, wearas computer data is... magic! or electicity... magics more exciting tho, anyway, what was i talking about?
+            oh yeah paper vs digital, i think digital data would be better as its much esier and more efficiant to read/write to, in a computers sense, but i think paper is best as a long term storage, kinda like cold storage? because paper in the right coditions could last for donkeys years! well... *cheaks notes* i think it could, who knows im not a rocket sientist! i can barly spell sientist! :D 
+            anyway, thats my thoughts on paper vs digital, what are yours? <button>Paper is better!</button> or <button>Digital is better!</button> :D
+            the next best topic is why i put buttons there, well... its because i can! mwahahaha! :D and dont ask why they dont work, its too hard to code >:C 
+            anyway, thanks for reading my random thoughts, see you next time! :D
+            what? who is this imposter writing in my thingy page? get out of here you no good... imposter! :O
+            oh wait thats spellcheak... well anyway, this page shall continue for the end of time! mwahahaha! :D
+            i wonder if i can beat the record for the longest page? what is that anyway? hmmmm 
+            doupt that tho, i think its like 20million :O id be ded as a dinosour before writing all that! :D 
+            stupid spellcheak keeps wanthing to say bye! even spellcheak thinks this is too many words heheheh
+            me just relized that this text im writing is kinda hard to read on the website... maybe i should add a button that changes the font to somthing easier to read? hmmmm
+            just imagine this <button onclick="document.querySelector('main p').classList.toggle('easy-read')">Change Font</button> does that! (Note to future self, make this work!)
+            why dont you test that button, see if future me actually did make it work, or just left it as a button that does nothing :D
+            or maybe i DID try but it was too hard and gave up, thats deffintly a possibility heheheh
+            oh i just had a brainwave, here, have 2 more tottaly usefull buttons! (Not to be confused with 2 tottaly useless buttons!) <button onclick="changeFontSize(2)">Bigger 😎</button> and this one! <button onclick="changeFontSize(-2)">Smaller 😴</button>
+            and if they do somthing great! means future me did do somthing, but if not, you should shame future me :D its all his fault! <button id="shameButton">SHAME!</button> and just imagine theres a counter here that is a shame limit hehehe:
+            <strong>SHAME LIMIT!: <span id="shameCounter">10</span></strong>
+            and just imagine that it goes down every time you shame, and only resets arfter 1 minute >:D and dont even think about refreshing your browser, i thought of that! so its saved in local storage hehehehe well.. that is if future me actually worked out how to implement that... 
+            poor future me, hes gonna have soo much to do heheheh >:D 
+            i should write a story! hmmmm
+            what would the story be about tho... *Magical poof noise*! read it here!: <strong>*Insert link to story that future me made*</strong>
+            
+
+
+        </p>
+    </main>
+</body>
+<script>
+    // Font size changer
+    function changeFontSize(amount) {
+        const p = document.getElementById('myText');
+        let style = window.getComputedStyle(p, null).getPropertyValue('font-size');
+        let currentSize = parseFloat(style);
+        p.style.fontSize = (currentSize + amount) + 'px';
+    }
+
+    // SHAME button functionality
+    const shameButton = document.getElementById('shameButton');
+    const shameCounterEl = document.getElementById('shameCounter');
+
+    // Initialize counter from localStorage
+    let shameData = JSON.parse(localStorage.getItem('shameData')) || { counter: 10, lastReset: Date.now() };
+    const resetTime = 60 * 1000; // 1 minute
+
+    function updateCounter() {
+        const now = Date.now();
+        if (now - shameData.lastReset > resetTime) {
+            shameData.counter = 10;
+            shameData.lastReset = now;
+        }
+        shameCounterEl.textContent = shameData.counter;
+        localStorage.setItem('shameData', JSON.stringify(shameData));
+    }
+
+    shameButton.addEventListener('click', () => {
+        updateCounter();
+        if (shameData.counter > 0) {
+            shameData.counter--;
+            localStorage.setItem('shameData', JSON.stringify(shameData));
+            shameCounterEl.textContent = shameData.counter;
+        } else {
+            alert("You've reached the SHAME LIMIT! Wait 1 minute for reset.");
+        }
+    });
+
+    // Run on page load
+    updateCounter();
+</script>
+</html>
