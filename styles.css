@@ -12,7 +12,13 @@
             padding: 0;
             background-color: #f0f0f0;
             color: #333;
-            font-size: 16px;
+            font-size: 19px;
+        }
+
+        .easy-read {
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        line-height: 1.6;
         }
 
         /* Header container */
@@ -39,6 +45,38 @@
             align-items: center;
             flex-wrap: wrap;
         }
+        /* Buttons */
+        button {
+            font-family: 'True Crimes', sans-serif;
+            background-color: #a00;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            background-color: #800;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            background-color: #600;
+            transform: translateY(0);
+        }
+
+        /* Optional: full-width buttons like .sector-link on mobile */
+        @media (max-width: 768px) {
+        button {
+            width: 100%;
+            max-width: none;
+        }
+        }
+
 
         nav a {
             text-decoration: none;

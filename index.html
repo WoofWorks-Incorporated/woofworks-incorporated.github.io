@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WoofWorks - A Conglomerate of Everything (But Dogs)</title>
     <style>
+        /* Notification Popup */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            display: none;
+            z-index: 1000;
+            border: 2px solid #a00;
+        }
+        .notification a {
+            color: #a00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .notification a:hover {
+            text-decoration: underline;
+        }
         /* Custom Font */
         @font-face {
             font-family: 'True Crimes';
@@ -194,6 +215,10 @@
     </style>
 </head>
 <body>
+    <div class="notification" id="barkSearchNotification">
+        Check out <a href="searchengine.html">BarkSearch!</a> - Our Revolutionary Search Engine
+    </div>
+
     <header>
         <img src="logo2.png" alt="WoofWorks Logo">
         <button class="menu-button">☰</button>
@@ -201,14 +226,27 @@
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="explorehq.html">Explore HQ</a>
+            <a href="searchengine.html">BarkSearch</a>
             <a href="login.html">Login</a>
             <a href="signup.html">Sign Up</a>
         </nav>
     </header>
 
     <script>
+        // Menu toggle
         document.querySelector('.menu-button').addEventListener('click', function() {
             document.querySelector('nav').classList.toggle('active');
+        });
+
+        // Show notification
+        window.addEventListener('load', function() {
+            const notification = document.getElementById('barkSearchNotification');
+            notification.style.display = 'block';
+            
+            // Hide notification after 5 seconds
+            setTimeout(function() {
+                notification.style.display = 'none';
+            }, 4000);
         });
     </script>
 
@@ -238,7 +276,7 @@
         
 
         <h2>Read Your life Away Here!:</h2>
-        <a href="thingy.html" class="sector-link">READ!!!</a>
+        <a href="thingy.html" class="sector-link">READ!!! or else >:D</a>
     </main>
 
     <footer>
